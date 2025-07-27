@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>mdts - Markdown Docs Viewer</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 
     :root {
       --bg: #121212;
@@ -19,7 +19,7 @@
       margin: 0;
       background: var(--bg);
       color: var(--fg);
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-family: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       line-height: 1.5;
       display: flex;
       min-height: 100vh;
@@ -51,7 +51,7 @@
       font-size: 1.25rem;
       color: #aaa;
       margin-top: 0;
-      margin-bottom: 1.5em;
+      margin-bottom: 2em;
     }
 
     .btn {
@@ -78,7 +78,7 @@
     ul.features {
       list-style: none;
       padding: 0;
-      margin: 1.5em 0 2em 0;
+      margin: 3em auto 5em;
       max-width: 360px;
       text-align: left;
     }
@@ -101,7 +101,7 @@
       display: inline-block;
       background: #222;
       color: var(--accent);
-      font-family: 'Courier New', Courier, monospace;
+      font-family: monospace;
       padding: 0.15em 0.4em;
       border-radius: 4px;
       font-weight: 600;
@@ -145,12 +145,13 @@
 
     <p>Run with <code class="command">npx mdts</code> for quick start.</p>
 
-    <img src="/images/mdts-screenshot.png" alt="mdts Screenshot" class="screenshot" />
+    <img src="./images/mdts-screenshot.png" alt="mdts Screenshot" class="screenshot" />
 
   </main>
 
   <footer>
     <a href="https://github.com/unhappychoice/mdts" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a href="https://www.npmjs.com/package/mdts" target="_blank" rel="noopener noreferrer">npm</a>
   </footer>
 </body>
 </html>
