@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>mdts - Markdown Docs Viewer</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+    :root {
+      --bg: #121212;
+      --fg: #e0e0e0;
+      --accent: #4fc3f7;
+      --link-hover: #82cfff;
+      --border: #333;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.5;
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover,
+    a:focus {
+      color: var(--link-hover);
+      text-decoration: underline;
+    }
+
+    h1 {
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin-bottom: 0.25em;
+    }
+
+    h2 {
+      font-weight: 400;
+      font-size: 1.25rem;
+      color: #aaa;
+      margin-top: 0;
+      margin-bottom: 1.5em;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 1.5em 0;
+      padding: 0.75em 2em;
+      border: 2px solid var(--accent);
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      background: transparent;
+      color: var(--accent);
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    .btn:hover,
+    .btn:focus {
+      background: var(--accent);
+      color: var(--bg);
+      outline: none;
+    }
+
+    ul.features {
+      list-style: none;
+      padding: 0;
+      margin: 1.5em 0 2em 0;
+      max-width: 360px;
+      text-align: left;
+    }
+
+    ul.features li {
+      margin-bottom: 1em;
+      padding-left: 1.2em;
+      position: relative;
+      font-size: 1rem;
+    }
+
+    ul.features li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    code.command {
+      display: inline-block;
+      background: #222;
+      color: var(--accent);
+      font-family: 'Courier New', Courier, monospace;
+      padding: 0.15em 0.4em;
+      border-radius: 4px;
+      font-weight: 600;
+      margin: 0 0.1em;
+      user-select: all;
+    }
+
+    img.screenshot {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      box-shadow: 0 0 10px rgba(79, 195, 247, 0.4);
+      margin-bottom: 2em;
+    }
+
+    footer {
+      font-size: 0.875rem;
+      color: #666;
+      margin-top: 3em;
+    }
+
+    footer a {
+      margin: 0 0.5em;
+      color: var(--accent);
+    }
+
+  </style>
+</head>
+<body>
+  <main>
+    <h1>mdts</h1>
+    <h2>Browse Markdown docs like a website — no build needed</h2>
+    <a href="https://github.com/unhappychoice/mdts" class="btn" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+
+    <ul class="features" aria-label="Features">
+      <li>No config, zero setup</li>
+      <li>Instant preview from local folder</li>
+      <li>Tree-structured Markdown navigation</li>
+    </ul>
+
+    <p>Run with <code class="command">npx mdts</code> for quick start.</p>
+
+    <img src="/images/mdts-screenshot.png" alt="mdts Screenshot" class="screenshot" />
+
+  </main>
+
+  <footer>
+    <a href="https://github.com/unhappychoice/mdts" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </footer>
+</body>
+</html>
+
