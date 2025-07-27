@@ -92,7 +92,7 @@
     ul.features {
       list-style: none;
       padding: 0;
-      margin: 3em auto 5em;
+      margin: 2.5em auto 4em;
       max-width: 360px;
       text-align: left;
     }
@@ -124,6 +124,26 @@
       user-select: all;
     }
 
+    pre {
+      background: #222;
+      border-radius: 4px;
+      padding: 0.75em 1em;
+      margin: 1.5em auto;
+      max-width: 400px;
+      text-align: left;
+      overflow-x: auto;
+    }
+
+    code.shell-command {
+      display: block;
+      color: var(--accent);
+      font-family: monospace;
+      font-size: 1rem;
+      text-align: center;
+      white-space: pre;
+      user-select: all;
+    }
+
     img.screenshot {
       max-width: 100%;
       height: auto;
@@ -146,6 +166,37 @@
       color: var(--accent);
     }
 
+    .code-block-container {
+      position: relative;
+      display: block;
+      width: 426px;
+      margin: 0 auto;
+    }
+
+    .copy-button {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background-color: var(--accent);
+      color: var(--bg);
+      border: none;
+      border-radius: 3px;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-size: 0.8rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .code-block-container:hover .copy-button {
+      opacity: 1;
+    }
+
+    .copy-button.copied {
+      background-color: #ffffff; /* White background */
+      color: #121212; /* Dark text color */
+    }
+
   </style>
 </head>
 <body>
@@ -160,7 +211,11 @@
       <li>Tree-structured Markdown navigation</li>
     </ul>
 
-    <p>Run with <code class="command">npx mdts</code> for quick start.</p>
+    <p>Just run with:</p>
+    <div class="code-block-container">
+      <pre><code id="mdts-command" class="shell-command">npx mdts</code></pre>
+      <button class="copy-button" onclick="copyCommand(this)">Copy</button>
+    </div>
 
     <img src="./images/mdts-screenshot.png" alt="mdts Screenshot" class="screenshot" />
 
@@ -181,6 +236,22 @@
     "url": "https://mdts.unhappychoice.com",
     "sameAs": "https://github.com/unhappychoice/mdts"
   }
+  </script>
+  <script>
+    function copyCommand(button) {
+      const commandText = document.getElementById('mdts-command').innerText;
+      navigator.clipboard.writeText(commandText).then(() => {
+        const originalText = button.innerText;
+        button.innerText = 'Copied!';
+        button.classList.add('copied'); // Add copied class
+        setTimeout(() => {
+          button.innerText = originalText;
+          button.classList.remove('copied'); // Remove copied class
+        }, 2000); // 2秒後に元に戻す
+      }).catch(err => {
+        console.error('Failed to copy command: ', err);
+      });
+    }
   </script>
 </body>
 </html>
